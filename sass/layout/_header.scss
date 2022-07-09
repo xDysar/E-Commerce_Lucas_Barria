@@ -1,0 +1,21 @@
+.header {
+    background-color: $white;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 0 1rem;
+    padding: 2rem 0; 
+
+    .menu__link {
+        font-size: 2em;
+        color: $black;
+        transition: all .3s ease-in-out;
+    
+        &:hover {
+            color: $terra;
+        }
+    }
+}
+

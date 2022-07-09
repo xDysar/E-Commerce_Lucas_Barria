@@ -1,0 +1,19 @@
+.filters {
+    margin-right: 5rem;
+}
+.filter__color {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.4em;
+}
+
+input {
+    margin-right: 1rem
+}
+
+.filter__size {
+    @extend .filter__color;
+}

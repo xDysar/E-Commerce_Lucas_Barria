@@ -1,0 +1,34 @@
+// .container__search {
+//     display: inline-block;
+// }
+
+// .search__input {
+//     text-transform: uppercase;
+//     width: 20rem;
+//     padding: .4em 1.4em .3em .8em;
+//     color: var(--negro);
+//     border: none;
+//     border: 1px solid $black;
+//     outline: none;
+//     z-index: 0;
+// }
+// .search__img {
+//     position: relative;
+//     height: 2rem;
+//     width: 2rem;
+//     right: 27px;
+//     bottom: -5px;
+// }
+
+
+.delete-product {
+    padding: 5px 10px;
+    font-weight: bold;
+    color: $white;
+    background-color: $black;
+    border-radius: 50%;
+
+    &:hover {
+        color: $terra;
+    }
+}

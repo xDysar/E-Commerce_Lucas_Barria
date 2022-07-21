@@ -7,6 +7,8 @@ let itemsCart = [];
 
 // Variables Hoodies
 const hoodieContainer = document.querySelector("#hoodieContainer");  // Contenedor hoodies
+const selectColor = document.querySelector("#selectColor");
+const selectSize = document.querySelector("#selectSize");
 
 loadEventListeners();
 function loadEventListeners() {
@@ -45,6 +47,15 @@ function loadEventListeners() {
     }).showToast();
   });
 
+  // Lee el select y llena el objeto searchData
+  selectColor.addEventListener('change', e => {
+    searchData.color = e.target.value;
+    filterProduct();
+  });
+  selectSize.addEventListener("change", e => {
+    searchData.size = e.target.value;
+    filterProduct();
+  });
 }
 
 // Funciones
@@ -79,7 +90,7 @@ function deleteProduct(e) {
     cartHTML(); // Iterar sobre el carrito y mostrar su HTML
     Toastify({
       // Notificacion de agregar un producto
-      text: "Eliminaste un producto del carrito",
+      text: "Eliminaste un producto",
       duration: 1500,
       className: "notificationCart",
       gravity: "top",
@@ -105,8 +116,8 @@ function readDataProduct(product) {
   };
 
   // Revisa si un elemento ya existe en el carrito
-  const existe = itemsCart.some((product) => product.id === infoProduct.id);
-  if (existe) {
+  const exists = itemsCart.some((product) => product.id === infoProduct.id);
+  if (exists) {
     const products = itemsCart.map((product) => {
       if (product.id === infoProduct.id) {
         product.amount++;
@@ -120,9 +131,6 @@ function readDataProduct(product) {
     // Agrega elementos al arreglo del carrito
     itemsCart = [...itemsCart, infoProduct];
   }
-
-  console.log(itemsCart);
-
   cartHTML();
 }
 
@@ -166,26 +174,67 @@ function cleanHTML() {
 }
 // Crear el HTML de los productos
 function hoodieHTML(hoodiesItems) {
+  cleanHTMLProduct();
+
   hoodiesItems.forEach((hoodie) => {
+    const { img, name, price, id } = hoodie;
     const hoodieHTML = document.createElement("div");
     hoodieHTML.classList.add('product-hoodie')
 
     hoodieHTML.innerHTML = `
           <a href="#">
-            <img class="hoodie__img" src="${hoodie.img}" alt="Hoodie">
+            <img class="hoodie__img" src="${img}" alt="Hoodie">
           </a>
-          <h5 class="hoodie__name">${hoodie.name.toUpperCase()}</h5>
-          <p class="hoodie__price">${hoodie.price}</p>
+          <h5 class="hoodie__name">${name.toUpperCase()}</h5>
+          <p class="hoodie__price">${price}</p>
           <div class="hoodie__dues">
               <p class="hoodie__dues-info">6 cuotas sin interés de</p>
-              <p class="hoodie__dues-price">${Math.round(hoodie.price / 6)}</p>
+              <p class="hoodie__dues-price">${Math.round(price / 6)}</p>
           </div>
-          <a class="btn-add-cart" href="#" id="hoodieBtn" data-id="${
-            hoodie.id
-          }">Agregar al carrito</a>
+          <a class="btn-add-cart" href="#" id="hoodieBtn" data-id="${id}">Agregar al carrito</a>
     `;
 
     // Imprimir en el HTML
     hoodieContainer.appendChild(hoodieHTML);
   });
+}
+
+// Limpiar el HTML previo de los productos
+function cleanHTMLProduct() {
+  while (hoodieContainer.firstChild) {
+    hoodieContainer.removeChild(hoodieContainer.firstChild);
+  }
+}
+
+// Funcion que filtra en base a la busqueda
+function filterProduct() {
+  const resultFilters = hoodiesItems.filter( filterColor ).filter( filterSize );
+
+  if ( resultFilters.length ) {
+    hoodieHTML( resultFilters );
+  } else {
+    noFilters();
+  }
+}
+
+function filterColor( hoodie ) {
+  if ( searchData.color) {
+    return hoodie.color === searchData.color;
+  }
+  return hoodie;
+}
+
+function filterSize( hoodie ) {
+  if ( searchData.size ) {
+    return hoodie.size === searchData.size;
+  }
+  return hoodie;
+}
+
+function noFilters() {
+  cleanHTMLProduct();
+  const noFilters = document.createElement('p');
+  noFilters.classList.add("noResult");
+  noFilters.textContent = 'No hay resultados';
+  hoodieContainer.appendChild(noFilters);
 }

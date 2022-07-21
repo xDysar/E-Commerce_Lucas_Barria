@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <!-- Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
+
 <body>
     <!-- HEADER -->
     <header class="header container">
@@ -24,30 +26,29 @@
         </div> -->
 
         <div class="cart__container">
-                <ul>
-                    <li class="submenu">
-                            <img src="../img/cart.png" id="img-cart">
-                            <div id="cart">
-                                    
-                                    <table id="list-cart">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
+            <ul>
+                <li class="submenu">
+                    <img src="../img/cart.png" id="img-cart">
+                    <div id="cart">
 
-                                    <a href="#" id="empty-cart"
-                                    >Vaciar Carrito</a>
-                            </div>
-                    </li>
-                </ul>
-            </div>
+                        <table id="list-cart">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                        <a href="#" id="empty-cart">Vaciar Carrito</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
         <nav class="menu">
             <a class="menu__link" href="#">Productos</a>
@@ -60,39 +61,31 @@
         <!-- PRODUCTS OVERSIZE HOODIES -->
         <section class="products-hoodies">
             <h2 class="hoodie__title">Hoodies Oversize</h2>
-            <p class="hoodie__info">Big hoodies con capucha forrada super confortables, vienen en talle 1 y 2 (fijate en la tabla de medidas)</p>
             <div class="container">
                 <div class="container__products">
                     <div class="filters">
-                        <h5>Filtros</h5>
-                        <div class="filter__color">
-                            <h5>Color</h5>
-                            <label for="color-black">
-                                <input type="checkbox" name="color" value="color-black" id="filter-color-black">Negro
-                            </label>
-                            <label for="color-white">
-                                <input type="checkbox" name="color" value="color-white" id="filter-color-white">Blanco
-                            </label>
-                            <label for="color">
-                                <input type="checkbox" name="color" value="color-pink" id="filter-color-pink">Rosa
-                            </label>
-                            <label for="color">
-                                <input type="checkbox" name="color" value="color-brown" id="filter-color-brown">Marron
-                            </label>
-                            <label for="color">
-                                <input type="checkbox" name="color" value="color-yellow" id="filter-color-yellow">Amarillo
-                            </label>
+                        <div>
+                            <label for="color">Color</label>
+                            <select name="color" id="selectColor">
+                                <option value="">Seleccione</option>
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="rosa">Rosa</option>
+                                <option value="marron">Marron</option>
+                                <option value="amarillo">Amarillo</option>
+                            </select>
                         </div>
-                        <div class="filter__size">
-                            <h5>Talle</h5>
-                            <label for="talle">
-                                <input type="checkbox" name="talle" value="talle-1">1
-                            </label>
-                            <label for="talle">
-                                <input type="checkbox" name="talle" value="talle-2">2
-                            </label>
+                        <div>
+                            <label for="size">Talle</label>
+                            <select name="size" id="selectSize">
+                                <option value="">Seleccione</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
                         </div>
-                        <button type="button" id="buttonFilter">Filtrar</button>
                     </div>
 
                     <div id="list-of-hoodies">
@@ -100,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
     </main>
@@ -118,7 +111,8 @@
                 <div class="foo__contact">
                     <a><img class="icons__footer" src="../img/phone__icon.svg" alt="telefono">+54 388 15433625</a>
                     <a><img class="icons__footer" src="../img/at__icon.svg" alt="email">info@fidaclothes.com</a>
-                    <a><img class="icons__footer" src="../img/location-dot__icon.svg" alt="locación">Guemes 321, Jujuy Capital</a>
+                    <a><img class="icons__footer" src="../img/location-dot__icon.svg" alt="locación">Guemes 321, Jujuy
+                        Capital</a>
                 </div>
                 <div class="foo__socials">
                     <a href="#"><img class="icons__socials" src="../img/instagram__logo.svg" alt="whatsapp"></a>
@@ -135,4 +129,5 @@
     <script src="../js/bd.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>

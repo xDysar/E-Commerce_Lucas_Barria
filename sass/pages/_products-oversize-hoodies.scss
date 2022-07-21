@@ -1,16 +1,10 @@
-.hoodie__title,
-.hoodie__info {
+.hoodie__title {
     text-align: center;
 }
 
-.hoodie__info {
-    font-size: 1.7em;
-    margin-bottom: 2rem;
-}
 .hoodies {
     display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 1rem;
     justify-content: center;
     align-items: center;
@@ -68,23 +62,11 @@
 
 .container__products {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
-
-@media (min-width: 480px) {
-    .hoodies {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 768px) {
-    .hoodies {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 960px) {
-    .hoodies {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

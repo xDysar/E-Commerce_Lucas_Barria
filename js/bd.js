@@ -6,6 +6,7 @@ const hoodiesItems = [
     price: 10300.0,
     color: "negro",
     img: "../img/back-negro-over.jpg",
+    size: "M"
   },
 
   {
@@ -14,6 +15,7 @@ const hoodiesItems = [
     price: 9200.0,
     color: "blanco",
     img: "../img/bad-influence-oversize.jpg",
+    size: "M"
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const hoodiesItems = [
     price: 9200.0,
     color: "amarillo",
     img: "../img/flame-amariillo-over.jpg",
+    size: "M"
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ const hoodiesItems = [
     price: 10000.0,
     color: "rosa",
     img: "../img/glory-back-rosa-over.jpg",
+    size: "S"
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ const hoodiesItems = [
     price: 12500.0,
     color: "negro",
     img: "../img/black-back11.jpg",
+    size: "S"
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ const hoodiesItems = [
     price: 7900.0,
     color: "marron",
     img: "../img/hoodie-back-marron-ove.jpg",
+    size: "XXL"
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ const hoodiesItems = [
     price: 8900.0,
     color: "amarillo",
     img: "../img/hoodie-amarilo-back-over.jpg",
+    size: "XXL"
   },
   {
     id: 8,
@@ -56,6 +63,7 @@ const hoodiesItems = [
     price: 9500.0,
     color: "blanco",
     img: "../img/blanco-cyber-espalda.jpg",
+    size: "L"
   },
   {
     id: 9,
@@ -63,6 +71,7 @@ const hoodiesItems = [
     price: 9000.0,
     color: "blanco",
     img: "../img/flame-banana-back-over.jpg",
+    size: "L"
   },
   {
     id:  10,
@@ -70,6 +79,7 @@ const hoodiesItems = [
     price: 9100.0,
     color: "rosa",
     img: "../img/sakura-back-pver.jpg",
+    size: "XL"
   },
   {
     id:  11,
@@ -77,5 +87,12 @@ const hoodiesItems = [
     price: 9300.0,
     color: "negro",
     img: "../img/over-black-back.jpg",
+    size: "XL"
   },
 ];
+
+// Generar un objeto con el filtrado
+const searchData = {
+  color: "",
+  size: ""
+}

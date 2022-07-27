@@ -1,0 +1,50 @@
+[
+    {
+        "id" : 1,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "blanco",
+        "img" : "../img/remeras/remera-blanca-1.jpg",
+        "size" : "M"
+    },
+    {
+        "id" : 2,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "blanco",
+        "img" : "../img/remeras/remera-blanca-2.jpg",
+        "size" : "M"
+    },
+    {
+        "id" : 3,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "negro",
+        "img" : "../img/remeras/remera-negra-1.jpg",
+        "size" : "M"
+    },
+    {
+        "id" : 4,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "negro",
+        "img" : "../img/remeras/remera-negra-2.jpg",
+        "size" : "M"
+    },
+    {
+        "id" : 5,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "negro",
+        "img" : "../img/remeras/remera-roja-1.png",
+        "size" : "M"
+    },
+    {
+        "id" : 6,
+        "name" : "Geisha",
+        "price" : 10300.0,
+        "color" : "negro",
+        "img" : "../img/remeras/remera-roja-2.png",
+        "size" : "M"
+    }
+]

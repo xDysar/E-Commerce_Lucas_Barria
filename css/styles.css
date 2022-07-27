@@ -162,13 +162,50 @@ thead tr th {
   .submenu:hover #cart {
     left: -130px; } }
 
-.carousel {
-  height: 50vh;
+.container-slider {
+  width: 90%;
+  max-width: 100rem;
+  margin: auto;
+  overflow: hidden;
+  position: relative; }
+
+.slider {
+  display: flex;
+  width: 300%;
+  height: 40rem;
+  margin-left: -100%; }
+
+.slider__section {
+  width: 100%; }
+
+.slider__img {
+  display: block;
   width: 100%;
-  background-image: url(../../img/banner.webp);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  height: 100%;
+  object-fit: cover; }
+
+.slider__btn {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer; }
+
+.slider__btn:hover {
+  background-color: #fff; }
+
+.slider__btn--right {
+  right: 1rem; }
+
+.slider__btn--left {
+  left: 1rem; }
 
 #selectColor,
 #selectSize {
@@ -231,9 +268,6 @@ label {
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 30rem));
   gap: 1.5rem; }
-  .list-products .products-square {
-    height: 30rem;
-    width: 30rem; }
 
 /* SECTION METHODS */
 .shipping {
@@ -268,10 +302,19 @@ label {
 
 /* SHOW LIST PRODUCTS */
 .products-square {
-  transition: all .3s ease-in-out; }
+  height: 30rem;
+  width: 30rem;
+  overflow: hidden; }
 
-.products-square:hover {
-  transform: scale(1.1); }
+.products-square-img {
+  width: 100%;
+  height: 100%;
+  transition: .5s ease-in-out;
+  object-fit: cover; }
+
+.products-square-img:hover {
+  transform: scale(1.08);
+  background-color: black; }
 
 .hoodie__title {
   text-align: center; }
@@ -279,7 +322,7 @@ label {
 .hoodies {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-  gap: 1rem;
+  gap: 4rem 1rem;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -385,3 +428,11 @@ label {
 
 .field textarea {
   height: 20rem; }
+
+.construction {
+  background-image: url(../../img/webconstruction.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw; }

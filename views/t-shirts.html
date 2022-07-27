@@ -13,6 +13,8 @@
     <meta name="description" content="Comprá productos de Indumentaria por internet. Tenemos accesorios, remeras y más. Hacé tu pedido y pagalo online.">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -45,48 +47,49 @@
 
         <nav class="menu">
             <a class="menu__link" href="../index.html">Inicio</a>
-            <a class="menu__link" href="../index.html">Productos</a>
+            <a class="menu__link" href="#">Productos</a>
             <a class="menu__link" href="#">Nosotros</a>
             <a class="menu__link" href="./contact.html">Contacto</a>
         </nav>
     </header>
 
-    <main>
-        <section class="section__contact">
-            <h2 class="contact__title">Contacto</h2>
+    <main class="container">
+        <!-- PRODUCTS OVERSIZE HOODIES -->
+        <section class="products-hoodies">
+            <h2 class="hoodie__title">Remeras</h2>
             <div class="container">
-                <form class="form">
-                    <fieldset>
-                        <legend>Contactanos llenando todos los campos</legend>
-
-                        <div class="container-fields">
-                            <div class="field">
-                                <label>Nombre</label>
-                                <input class="input-text" type="text" placeholder="Nombre">
-                            </div>
-    
-                            <div class="field">
-                                <label>Teléfono</label>
-                                <input class="input-text" type="tel" placeholder="Teléfono">
-                            </div>
-    
-                            <div class="field">
-                                <label>Correo</label>
-                                <input class="input-text" type="email" placeholder="Email">
-                            </div>
-    
-                            <div class="field">
-                                <label>Mensaje</label>
-                                <textarea class="input-text"></textarea>
-                            </div>
-                        </div>
-
+                <div class="container__products">
+                    <div class="filters">
                         <div>
-                            <input class="btn-add-cart" type="submit" value="Enviar">
-                            <input class="btn-add-cart btn-color" type="submit" value="Resetar formulario">
+                            <label for="color">Color</label>
+                            <select name="color" id="selectColor">
+                                <option value="">Seleccione</option>
+                                <option value="negro">Negro</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="rosa">Rosa</option>
+                                <option value="marron">Marron</option>
+                                <option value="amarillo">Amarillo</option>
+                            </select>
                         </div>
-                    </fieldset>
-                </form>
+                        <div>
+                            <label for="size">Talle</label>
+                            <select name="size" id="selectSize">
+                                <option value="">Seleccione</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="list-of-shirts">
+                        <div id="shirtsContainer" class="hoodies">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
@@ -118,9 +121,7 @@
     <p class="copy">Pagina web creada por Lucas Barria - Curso de JavaScript CoderHouse &copy; 2022</p>
 
     <!-- SCRIPTS -->
-    <script src="../js/main.js"></script>
-    <script src="../js/bd.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../js/shirts.js"></script>
 </body>
 
 </html>

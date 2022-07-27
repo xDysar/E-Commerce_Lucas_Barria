@@ -6,7 +6,7 @@ const listHoodies = document.querySelector("#list-of-hoodies");
 let itemsCart = [];
 
 // Variables Hoodies
-const hoodieContainer = document.querySelector("#hoodieContainer");  // Contenedor hoodies
+const hoodieContainer = document.querySelector("#hoodieContainer"); // Contenedor hoodies
 const selectColor = document.querySelector("#selectColor");
 const selectSize = document.querySelector("#selectSize");
 
@@ -23,7 +23,7 @@ function loadEventListeners() {
   // Elimina productos del carrito
   cart.addEventListener("click", deleteProduct);
 
-  // Muestra los cursos del Local Storage
+  // Muestra los productos del Local Storage
   document.addEventListener("DOMContentLoaded", () => {
     itemsCart = JSON.parse(localStorage.getItem("cart")) || [];
     cartHTML();
@@ -48,11 +48,11 @@ function loadEventListeners() {
   });
 
   // Lee el select y llena el objeto searchData
-  selectColor.addEventListener('change', e => {
+  selectColor.addEventListener("change", (e) => {
     searchData.color = e.target.value;
     filterProduct();
   });
-  selectSize.addEventListener("change", e => {
+  selectSize.addEventListener("change", (e) => {
     searchData.size = e.target.value;
     filterProduct();
   });
@@ -179,13 +179,13 @@ function hoodieHTML(hoodiesItems) {
   hoodiesItems.forEach((hoodie) => {
     const { img, name, price, id } = hoodie;
     const hoodieHTML = document.createElement("div");
-    hoodieHTML.classList.add('product-hoodie')
+    hoodieHTML.classList.add("product-hoodie");
 
     hoodieHTML.innerHTML = `
           <a href="#">
             <img class="hoodie__img" src="${img}" alt="Hoodie">
           </a>
-          <h5 class="hoodie__name">${name.toUpperCase()}</h5>
+          <h5 class="hoodie__name">${name}</h5>
           <p class="hoodie__price">${price}</p>
           <div class="hoodie__dues">
               <p class="hoodie__dues-info">6 cuotas sin interés de</p>
@@ -193,7 +193,6 @@ function hoodieHTML(hoodiesItems) {
           </div>
           <a class="btn-add-cart" href="#" id="hoodieBtn" data-id="${id}">Agregar al carrito</a>
     `;
-
     // Imprimir en el HTML
     hoodieContainer.appendChild(hoodieHTML);
   });
@@ -208,24 +207,24 @@ function cleanHTMLProduct() {
 
 // Funcion que filtra en base a la busqueda
 function filterProduct() {
-  const resultFilters = hoodiesItems.filter( filterColor ).filter( filterSize );
+  const resultFilters = hoodiesItems.filter(filterColor).filter(filterSize);
 
-  if ( resultFilters.length ) {
-    hoodieHTML( resultFilters );
+  if (resultFilters.length) {
+    hoodieHTML(resultFilters);
   } else {
     noFilters();
   }
 }
 
-function filterColor( hoodie ) {
-  if ( searchData.color) {
+function filterColor(hoodie) {
+  if (searchData.color) {
     return hoodie.color === searchData.color;
   }
   return hoodie;
 }
 
-function filterSize( hoodie ) {
-  if ( searchData.size ) {
+function filterSize(hoodie) {
+  if (searchData.size) {
     return hoodie.size === searchData.size;
   }
   return hoodie;
@@ -233,8 +232,8 @@ function filterSize( hoodie ) {
 
 function noFilters() {
   cleanHTMLProduct();
-  const noFilters = document.createElement('p');
+  const noFilters = document.createElement("p");
   noFilters.classList.add("noResult");
-  noFilters.textContent = 'No hay resultados';
+  noFilters.textContent = "No hay resultados";
   hoodieContainer.appendChild(noFilters);
 }

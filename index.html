@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fida Clothes | Inicio</title>
     <!-- ICON -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <!-- SEO -->
-    <meta name="keywords" content="...">
-    <meta name="description" content="...">
+    <meta name="keywords" content="Tienda de ropa, hoodies, remeras, buzos, remerones">
+    <meta name="description" content="Comprá productos de Indumentaria por internet. Tenemos accesorios, remeras y más. Hacé tu pedido y pagalo online.">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -18,11 +18,6 @@
 <body>
     <!-- HEADER -->
     <header class="header container">
-        <!-- <div class="container__search">
-            <input class="search__input" type="search" name="Buscar productos" id="search-products">
-            <img class="search__img" src="./img/magnifying-glass-solid.svg" alt="lupa">
-        </div> -->
-
         <div class="cart__container">
             <ul>
                 <li class="submenu">
@@ -49,17 +44,29 @@
         </div>
 
         <nav class="menu">
-            <a class="menu__link" href="#">Productos</a>
+            <a class="menu__link" href="index.html">Inicio</a>
+            <a class="menu__link" href="index.html">Productos</a>
             <a class="menu__link" href="#">Nosotros</a>
-            <a class="menu__link" href="#">Contacto</a>
+            <a class="menu__link" href="./views/contact.html">Contacto</a>
         </nav>
     </header>
 
     <main>
         <!-- CAROUSEL -->
-        <section class="carousel" id="carousel">
-            <div class="container">
+        <section class="container-slider">
+            <div class="slider" id="slider">
+                <div class="slider__section">
+                    <img src="./img/slider (1).jpg" alt="" class="slider__img">
+                </div>
+                <div class="slider__section">
+                    <img src="./img/slider (2).jpg" alt="" class="slider__img">
+                </div>
+                <div class="slider__section">
+                    <img src="./img/slider (3).jpg" alt="" class="slider__img">
+                </div>
             </div>
+            <div id="btn-right" class="slider__btn slider__btn--right">&#62;</div>
+            <div id="btn-left" class="slider__btn slider__btn--left">&#60;</div>
         </section>
 
         <!-- SHIPPING METHOD -->
@@ -96,22 +103,22 @@
             <div class="container">
                 <div class="list-products">
                     <a href="./views/hoodies_oversize.html" class="products-square">
-                        <img src="./img/oversize.webp" alt="oversize">
+                        <img class="products-square-img" src="./img/oversize.webp" alt="oversize">
                     </a>
-                    <a href="#" class="products-square">
-                        <img src="./img/hoodies.webp" alt="hoodies">
+                    <a href="./views/webconstruction.html" class="products-square">
+                        <img class="products-square-img" src="./img/hoodies.webp" alt="hoodies">
                     </a>
-                    <a href="#" class="products-square">
-                        <img src="./img/buzos.webp" alt="buzos">
+                    <a href="./views/webconstruction.html" class="products-square">
+                        <img class="products-square-img" src="./img/buzos.webp" alt="buzos">
                     </a>
-                    <a href="#" class="products-square">
-                        <img src="./img/remeras.webp" alt="remeras">
+                    <a href="./views/t-shirts.html" class="products-square">
+                        <img class="products-square-img" src="./img/remeras.webp" alt="remeras">
                     </a>
-                    <a href="#" class="products-square">
-                        <img src="./img/remerones.webp" alt="remerones">
+                    <a href="./views/webconstruction.html" class="products-square">
+                        <img class="products-square-img" src="./img/remerones.webp" alt="remerones">
                     </a>
-                    <a href="#" class="products-square">
-                        <img src="./img/color-tee.webp" alt="color-tee">
+                    <a href="./views/webconstruction.html" class="products-square">
+                        <img class="products-square-img" src="./img/color-tee.webp" alt="color-tee">
                     </a>
                 </div>
             </div>
@@ -137,7 +144,7 @@
                 <div class="foo__socials">
                     <a href="#"><img class="icons__socials" src="./img/instagram__logo.svg" alt="whatsapp"></a>
                     <a href="#"><img class="icons__socials" src="./img/whatsapp.svg" alt="whatsapp"></a>
-                    <a href="#"><img class="icons__socials" src="./img/instagram__logo.svg" alt="facebook"></a>
+                    <a href="#"><img class="icons__socials" src="./img/email.svg" alt="email"></a>
                 </div>
             </div>
         </div>
@@ -145,6 +152,7 @@
     <p class="copy">Pagina web creada por Lucas Barria - Curso de JavaScript CoderHouse &copy; 2022</p>
 
     <!-- SCRIPTS -->
+    <script src="./js/slider.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/bd.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
